@@ -103,6 +103,7 @@
     <Compile Include="LoanApplicationTests.cs" />
     <Compile Include="PageObjectModels\AcceptedPage.cs" />
     <Compile Include="PageObjectModels\DeclinedPage.cs" />
+    <Compile Include="PageObjectModels\HomePage.cs" />
     <Compile Include="PageObjectModels\LoanApplicationPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

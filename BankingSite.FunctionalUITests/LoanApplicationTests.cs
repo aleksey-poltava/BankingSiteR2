@@ -10,6 +10,22 @@ namespace BankingSite.FunctionalUITests
     class LoanApplicationTests
     {
         [Test]
+        public void ShouldOpenMainPage()
+        {
+            var homePage = BrowserHost.Instance
+                .NavigateToInitialPage<HomeController, HomePage>(x => x.Index());
+
+            Thread.Sleep(5000);
+
+            var h1Text = homePage.PageHeader;
+
+            Assert.That(h1Text, Is.EqualTo("Low rate loan!"));
+
+            Thread.Sleep(2000);
+        }
+
+
+        [Test]
         public void ShouldAcceptLoanApplication()
         {
             var applyPage = BrowserHost.Instance
@@ -37,7 +53,7 @@ namespace BankingSite.FunctionalUITests
             //    .Browser.FindElement(By.Id("AnnualIncome"));
             //incomeBox.SendKeys("9999999");
 
-            Thread.Sleep(2000);
+            Thread.Sleep(5000);
 
             //var applyButton = BrowserHost.Instance.Application
             //    .Browser.FindElement(By.Id("Apply"));
