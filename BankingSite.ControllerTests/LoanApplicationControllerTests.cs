@@ -21,7 +21,6 @@ namespace BankingSite.ControllerTests
             //var result = sut.Apply() as ViewResult;
 
             //Assert.That(result.ViewName, Is.EqualTo("Apply"));
-            //new comment
 
             sut.WithCallTo(x => x.Apply()).ShouldRenderDefaultView();
         }
