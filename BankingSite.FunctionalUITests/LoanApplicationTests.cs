@@ -31,6 +31,8 @@ namespace BankingSite.FunctionalUITests
             var applyPage = BrowserHost.Instance
                 .NavigateToInitialPage<LoanApplicationController, LoanApplicationPage>(x => x.Apply());
 
+            Thread.Sleep(5000);
+
             var acceptPage = applyPage.EnterFirstName("Gentry")
                 .EnterLastName("Smith")
                 .EnterAge("42")
@@ -77,6 +79,8 @@ namespace BankingSite.FunctionalUITests
             var applyPage = BrowserHost.Instance
                 .Application.NavigateToInitialPage<LoanApplicationController, LoanApplicationPage>(x => x.Apply());
 
+            Thread.Sleep(5000);
+
             var declinePage = applyPage.EnterFirstName("Gentry")
                 .EnterLastName("Smith")
                 .EnterAge("16")
@@ -99,13 +103,13 @@ namespace BankingSite.FunctionalUITests
             //    .Browser.FindElement(By.Id("AnnualIncome"));
             //incomeBox.SendKeys("20000");
 
-            Thread.Sleep(2000);
+            Thread.Sleep(5000);
 
             //var applyButton = BrowserHost.Instance.Application
             //    .Browser.FindElement(By.Id("Apply"));
             //applyButton.Click();
 
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
 
             //var declineMessageText = BrowserHost.Instance.Application
             //    .Browser.FindElement(By.Id("declineMessage"));
@@ -114,7 +118,7 @@ namespace BankingSite.FunctionalUITests
 
             Assert.That(declineMessageText, Is.EqualTo("Sorry Gentry - We are unable to offer you a loan at this time."));
 
-            Thread.Sleep(5000);
+            Thread.Sleep(2000);
 
         }
     }
