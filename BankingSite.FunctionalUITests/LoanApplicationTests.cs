@@ -24,6 +24,18 @@ namespace BankingSite.FunctionalUITests
             Thread.Sleep(2000);
         }
 
+        [Test]
+        public void ButtonAcceptExistsOnLoanPage()
+        {
+            var applyPage = BrowserHost.Instance
+                .NavigateToInitialPage<LoanApplicationController, LoanApplicationPage>(x => x.Apply());
+
+            Thread.Sleep(5000);
+
+            Assert.IsTrue(applyPage.isButtonExists());
+
+            Thread.Sleep(5000);
+        }
 
         [Test]
         public void ShouldAcceptLoanApplication()

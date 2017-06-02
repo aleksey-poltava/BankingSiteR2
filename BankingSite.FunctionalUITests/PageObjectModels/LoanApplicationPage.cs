@@ -5,6 +5,11 @@ namespace BankingSite.FunctionalUITests.PageObjectModels
 {
     class LoanApplicationPage : Page
     {
+        public IWebElement ApplyButton
+        {
+            get { return Find.Element(By.Id("Apply")); }
+        }
+
         public LoanApplicationPage EnterFirstName(string firstName)
         {
             Find.Element(By.Id("FirstName")).SendKeys(firstName);
@@ -36,6 +41,12 @@ namespace BankingSite.FunctionalUITests.PageObjectModels
         public T SubmitApplication<T>() where T : UiComponent, new()
         {
             return Navigate.To<T>(By.Id("Apply"));
+        }
+
+        public bool? isButtonExists()
+        {
+            IWebElement button = Find.Element(By.Id("Apply"));
+            return button.Displayed;
         }
     }
 }
